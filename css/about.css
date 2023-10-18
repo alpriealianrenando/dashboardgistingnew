@@ -1,0 +1,34 @@
+<style>
+/* CSS untuk tata letak halaman About */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #105832;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(10, 89, 68, 0.2);
+}
+
+/* CSS untuk gaya teks pada halaman About */
+p {
+    line-height: 1.6;
+}
+</style>

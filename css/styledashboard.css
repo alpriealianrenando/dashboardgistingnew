@@ -1,0 +1,75 @@
+div .row {
+    color: #000000;
+    background-color: rgb(13, 109, 0);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+}
+
+div.text-center {
+    color: rgb(233, 233, 233);
+    background-color: rgb(3, 72, 22);
+}
+
+select {
+    color: #000000;
+    font-size: medium;
+    padding: 5px;
+    border: 1px solid #ddd;
+    background-color: #777777;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height: 550px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #145803;
+    height: 200%;
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+.chart {
+    height: 300px; /* Ubah tinggi sesuai kebutuhan */
+    flex: 1; /* Mengisi ruang yang tersedia dalam flex container */
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+/* On small screens, set height to 'auto' for the grid */
+@media (max-width: 768px) {
+    .row.content {
+        height: auto;
+    }
+    .sidenav {
+        height: auto;
+    }
+}

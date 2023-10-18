@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@babel/core": "^7.22.15",
+    "@babel/preset-react": "^7.22.15"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
