@@ -1,5 +1,5 @@
 function fetchData() {
-    fetch('https://vps.isi-net.org:5000/GetDataGisting')
+    fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
       .then(response => response.json())
       .then(data => {
         // Update tampilan dengan data yang diterima dari server
@@ -38,7 +38,7 @@ function updatePhBox(phValue) {
 }
 
 // Mengambil data dari API setiap menit
-fetch(`https://vps.isi-net.org:5000/GetDataGisting`)
+fetch(`https://vps.isi-net.org:5000/GetDataGistingNew`)
     .then(response => response.json())
     .then(data => {
         // Ambil nilai pH terakhir dari data
@@ -186,7 +186,7 @@ function updateacsBox(acsValue) {
 
 
 // Mengambil data dari API setiap menit
-fetch(`https://vps.isi-net.org:5000/GetDataGisting`)
+fetch(`https://vps.isi-net.org:5000/GetDataGistingNew`)
     .then(response => response.json())
     .then(data => {
         // Ambil nilai pH terakhir dari data
@@ -233,7 +233,7 @@ fetch(`https://vps.isi-net.org:5000/GetDataGisting`)
 
 // Mengambil data dari API setiap menit
 function fetchTableData() {
-    fetch('https://vps.isi-net.org:5000/GetDataGisting')
+    fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
         .then(response => response.json())
         .then(data => {
             const dataBody = document.getElementById('data-body');
@@ -270,7 +270,7 @@ fetchTableData();
 setInterval(fetchTableData, 2000);
 
 // Grafik Suhu Air Permukaan
-fetch('https://vps.isi-net.org:5000/GetDataGisting')
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
   .then(response => response.json())
   .then(data => {
       const result = data.result;
@@ -296,7 +296,7 @@ fetch('https://vps.isi-net.org:5000/GetDataGisting')
   .catch(error => console.error('Error:', error));
 
 // Grafik Suhu Air Dasar
-fetch('https://vps.isi-net.org:5000/GetDataGisting')
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
   .then(response => response.json())
   .then(data => {
       const result = data.result;
@@ -313,7 +313,7 @@ fetch('https://vps.isi-net.org:5000/GetDataGisting')
               datasets: [{
                   label: 'SensorTDS',
                   data: sensorTDS,
-                  borderColor: '#35A29F',
+                  borderColor: '#FFA500',
                   tension: 0.1
               }]
           }
@@ -323,7 +323,7 @@ fetch('https://vps.isi-net.org:5000/GetDataGisting')
 
 //   Grafik DS18B20
 
-fetch('https://vps.isi-net.org:5000/GetDataGisting')
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
   .then(response => response.json())
   .then(data => {
       const result = data.result;
@@ -348,3 +348,244 @@ fetch('https://vps.isi-net.org:5000/GetDataGisting')
   })
   .catch(error => console.error('Error:', error));
 
+//   grafik Rain rouge
+
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorRainRouge = latestData.map(item => item.pressure_388).reverse();
+
+      const ctx = document.getElementById('ChartRainRouge').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'SensorRainRouge',
+                  data: sensorRainRouge,
+                  borderColor: '#800080',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
+
+//   grafik Anemometer
+
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorAnemometer = latestData.map(item => item.phsensor).reverse();
+
+      const ctx = document.getElementById('ChartAnemometer').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'SensorAnemometer',
+                  data: sensorAnemometer,
+                  borderColor: '#35A29F',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
+
+// grafik Wind Wave direction
+
+
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorwindwave = latestData.map(item => item.tdssensor).reverse();
+
+      const ctx = document.getElementById('Chartwindwave').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'Sensorwindwave',
+                  data: sensorwindwave,
+                  borderColor: '#00FF00',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
+
+//   grafik Water Flow
+
+
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorwaterflow = latestData.map(item => item.moisturesensor).reverse();
+
+      const ctx = document.getElementById('Chartwaterflow').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'Sensorwaterflow',
+                  data: sensorwaterflow,
+                  borderColor: '#FFFF00',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
+
+//   grafik BME Sensor
+
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorBME = latestData.map(item => item.anemometer).reverse();
+
+      const ctx = document.getElementById('ChartBME').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'SensorBME',
+                  data: sensorBME,
+                  borderColor: '#FF00FF',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
+
+//   Grafik Soil
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorsoil = latestData.map(item => item.humidity_280).reverse();
+
+      const ctx = document.getElementById('Chartsoil').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'Sensorsoil',
+                  data: sensorsoil,
+                  borderColor: '#000000',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
+
+//   grafik contractless
+
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorless = latestData.map(item => item.currentsensor).reverse();
+
+      const ctx = document.getElementById('Chartless').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'Sensorless',
+                  data: sensorless,
+                  borderColor: '#35A29F',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
+
+//   Grafik Weighting Sensor
+
+fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorweighting = latestData.map(item => item.rainintensity).reverse();
+
+      const ctx = document.getElementById('Chartweighting').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'Sensorweighting',
+                  data: sensorweighting,
+                  borderColor: '#FF000080',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
+
+  fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
+  .then(response => response.json())
+  .then(data => {
+      const result = data.result;
+      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+
+      const labels = latestData.map(item => item.datetime).reverse();
+      const sensorACS = latestData.map(item => item.rainstatus).reverse();
+
+      const ctx = document.getElementById('ChartACS').getContext('2d');
+      new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'SensorACS',
+                  data: sensorACS,
+                  borderColor: '#0000FF40',
+                  tension: 0.1
+              }]
+          }
+      });
+  })
+  .catch(error => console.error('Error:', error));
