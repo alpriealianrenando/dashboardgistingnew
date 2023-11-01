@@ -9,6 +9,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/styledashboard.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+
 </head> 
 <body>
 <nav class="navbar navbar-inverse visible-xs">
@@ -50,120 +52,146 @@
       <div class="well">
         <div class=" text-center">
           <img src="img/Logogreenhouse.png" alt="greenhouse" width="200" height="200">
-        <h4>Welcome To Dashboard Monitoring System Green House</h4>
-        <p>Green House Gisting Permai Kab Tanggamus By PPK ORMAWA Universitas Lampung</p>
+        <h4>Welcome TO Dashboard</h4>
+        <p>Sistem Monitoring Smart Greenhouse By Teknik ELektro</p>
         </div>
         
       </div>
       <div class="row">
         <div class="col-sm-3">
-          <div class="well">
-            <h4>Sensor PH</h4>
-            <P id="sensor_ph"></P>
-            <script src="js/dashboard.js"></script>
-          </div>
+            <div class="well">
+              <h4>Sensor PH</h4>
+                <p id="sensor_ph"></p>
+                <script src="js/dashboard.js"></script>
+            </div>
         </div>
         <div class="col-sm-3">
-          <div class="well">
-            <h4>TDS sensor</h4>
-            <P id="tdssensor"></P>
-            <script src="js/dashboard.js"></script>
-          </div>
+            <div class="well">
+                <h4>TDS sensor</h4>
+                <p id="tdssensor"></p>
+                <script src="js/dashboard.js"></script>
+            </div>
         </div>
         <div class="col-sm-3">
-          <div class="well">
-            <h4>DS18B20</h4>
-            <P id="dssensor"></P>
-            <script src="js/dashboard.js"></script>
-          </div>
+            <div class="well">
+                <h4>Suhu Air</h4>
+                <p id="suhuair"></p>
+                <script src="js/dashboard.js"></script>
+            </div>
         </div>
         <div class="col-sm-3">
-          <div class="well">
-            <h4>Rain Rouge</h4>
-            <P id="rainrouge"></P>
-            <script src="js/dashboard.js"></script>
-          </div>
+            <div class="well">
+                <h4>Rain Rouge</h4>
+                <p id="rainrouge"></p>
+                <script src="js/dashboard.js"></script>
+            </div>
         </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="well">
+                <h4>Wind Direction</h4>
+                <p id="windwave"></p>
+                <script src="js/dashboard.js"></script>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well">
+                <h4>Wind Speed</h4>
+                <p id="windspeed"></p>
+                <script src="js/dashboard.js"></script>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well">
+             <h4>Water Flow Meja 1</h4>
+                <p id="waterflow1"></p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well">
+               <h4>berat</h4>
+                <p id="berat_sensor"></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="well">
+              <h4>Suhu Ruangan</h4>
+                <p id="suhu_ruangan"></p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well">
+                <h4>Contactless Infrared</h4>
+                <p id="contactless"></p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well">
+                <h4>Tekanan Udara</h4>
+                <p id="tekanan_udara"></p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="well">
+                <h4>Ketinggian</h4>
+                <p id="ketinggian"></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+          <div class="well">
+            <h4>Waterflow Meja 2</h4>
+              <p id="waterflow2"></p>
+          </div>
       </div>
-      <div class="row">
-        <div class="col-sm-3">
+      <div class="col-sm-3">
           <div class="well">
-            <h4>Anemometer</h4>
-            <P id="Anemometer"></P>
-            <script src="js/dashboard.js"></script>
+              <h4>Waterflow Meja 3</h4>
+              <p id="waterflow3"></p>
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Wind Wave Direction</h4>
-            <P id="windwave"></P>
-            <script src="js/dashboard.js"></script>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Water FLow</h4>
-            <P id="WaterFlow"></P>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>BME Sensor</h4>
-            <P id="bme_sensor"></P>
-          </div>
-        </div>
       </div>
-      <div class="row">
-        <div class="col-sm-3">
+      <div class="col-sm-3">
           <div class="well">
-            <h4>Soil Moisture Sensor</h4>
-            <P id="soil_moisture"></P>
+              <h4>Waterflow Meja 4</h4>
+              <p id="waterflow4"></p>
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Contactless Infrared</h4>
-            <P id="contactless"></P>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Weighthing Sensor</h4>
-            <P id="weighting_sensor"></P>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>ACS712</h4>
-            <P id="acs_sensor"></P>
-          </div>
-        </div>
       </div>
-
-      <table id="realtime-table">
-        <thead>
+    <!-- Lanjutkan dengan menambahkan elemen tabel lainnya sesuai kebutuhan Anda -->
+    <div id="table-container">
+        <table id="realtime-table">
+          <thead>
             <tr>
-            <th>No</th>
-            <th>Waktu</th>
-            <th>Sensor PH</th>
-            <th>TDS sensor  </th>
-            <th>DS18B20</th>
-            <th>Rain Rouge</th>
-            <th>Anemometer</th>
-            <th>Wind Wave Direction</th>
-            <th>Water FLow</th>
-            <th>BME Sensor</th>
-            <th>Soil Moisture Sensor</th>
-            <th>Contactless Infrared</th>
-            <th>Weighthing Sensor</th>
-            <th>ACS712</th>
-
+              <th>No</th>
+              <th>Waktu</th>
+              <th>Sensor PH</th>
+              <th>TDS sensor  </th>
+              <th>Rain Rouge</th>
+              <th>Suhu Air</th>
+              <th>wind wave direction</th>
+              <th>Wind Speep</th>
+              <th>Water FLow1</th>
+              <th>Water FLow2</th>
+              <th>Water FLow3</th>
+              <th>Water FLow4</th>
+              <th>Berat Sensor</th>
+              <th>Suhu Ruangan</th>
+              <th>Tekanan Udara</th>
+              <th>Ketinggian</th>
+              <th>Infrared</th>
             </tr>
-        </thead>
-        <tbody id="data-body">
+          </thead>
+          <tbody id="data-body">
             <!-- Data akan ditambahkan ke sini secara dinamis -->
-        </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+      
 </body>
 </html>
 
@@ -177,10 +205,11 @@
         <!-- TDS SENSOR  -->
         <div class="chart">
             <canvas id="ChartSuhuDasar"></canvas>
+
         </div>
         <!-- DS18B20 -->
         <div class="chart">
-            <canvas id="ChartDS18B20"></canvas>
+            <canvas id="Chartsuhuair"></canvas>
         </div>
         <!-- Kadar Oksigen -->
         <div class="chart">
@@ -188,11 +217,11 @@
         </div>
         <!-- Salinitas -->
         <div class="chart">
-            <canvas id="ChartAnemometer"></canvas>
+            <canvas id="Chartwinddir"></canvas>
         </div>
         <!-- Suhu Ruang -->
         <div class="chart">
-            <canvas id="Chartwindwave"></canvas>
+            <canvas id="Chartwindspeed"></canvas>
         </div>
         <!-- Salinitas -->
         <div class="chart">
@@ -200,23 +229,23 @@
         </div>
         <!-- Tinggi Air -->
         <div class="chart">
-            <canvas id="ChartBME"></canvas>
+            <canvas id="ChartBerat"></canvas>
         </div>
         <!-- Soil -->
         <div class="chart">
-            <canvas id="Chartsoil"></canvas>
+            <canvas id="Chartsuhuruangan"></canvas>
         </div>
         <!-- contraccless -->
         <div class="chart">
-          <canvas id="Chartless"></canvas>
+          <canvas id="Chartinfrared"></canvas>
       </div>
       <!-- weightning -->
       <div class="chart">
-        <canvas id="Chartweighting"></canvas>
+        <canvas id="Chartketinggian"></canvas>
     </div>
     <!-- ACS -->
     <div class="chart">
-      <canvas id="ChartACS"></canvas>
+      <canvas id="Chartekanan"></canvas>
   </div>
     </div>
     <script src="js/dashboard.js"></script>
