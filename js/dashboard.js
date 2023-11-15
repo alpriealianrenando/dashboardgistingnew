@@ -7,7 +7,6 @@ function fetchData() {
         console.log(data);
         document.getElementById('sensor_ph').innerText = data.result[0].ph;
         document.getElementById('tdssensor').innerText = data.result[0].tds;
-        document.getElementById('rainrouge').innerText = data.result[0].rain;
         document.getElementById('suhuair').innerText = data.result[0].suhu_air;
         document.getElementById('windwave').innerText = data.result[0].winddirection;
         document.getElementById('windspeed').innerText = data.result[0].kecepatan_angin;
@@ -69,23 +68,21 @@ function fetchData() {
 
             updateBox('sensor_ph', data1.result[0].ph, { min: 0, max: 100 });
             updateBox('tdssensor', data1.result[0].tds, { min: 0.01, max: 100 });
-            updateBox('rainrouge', data1.result[0].rain, { min: 3, max: 14 });
             updateBox('suhuair', data1.result[0].suhu_air, { min: 4, max: 100 });
-            updateBox('windwave', data1.result[0].winddirection, { min: 4, max: 1000 });
             updateBox('windspeed', data1.result[0].kecepatan_angin, { min: 4, max: 1000 });
             updateBox('berat_sensor', data1.result[0].berat1, { min: 4, max: 10000 });
-            updateBox('contactless1', data1.result[0].infrared1, { min: 4, max: 100 });
-            updateBox('infrared_2', data1.result[0].infrared2, { min: 4, max: 100 });
-            updateBox('infrared_3', data1.result[0].infrared3, { min: 4, max: 100 });
+            updateBox('contactless1', data1.result[0].infrared1, { min: 0.01, max: 100 });
+            updateBox('infrared_2', data1.result[0].infrared2, { min: 0.01, max: 100 });
+            updateBox('infrared_3', data1.result[0].infrared3, { min: 0.01, max: 100 });
 
             updateBox('waterflow1', data2.result[0].waterflow1, { min: 0.01, max: 100 });
             updateBox('waterflow2', data2.result[0].waterflow2, { min: 0.01, max: 100 });
             updateBox('waterflow3', data2.result[0].waterflow3, { min: 0.01, max: 100 });
             updateBox('waterflow4', data2.result[0].waterflow4, { min: 0.01, max: 100 });
-            updateBox('soilmoisture1', data2.result[0].soilmoisture1, { min: 2, max: 100 });
-            updateBox('soilmoisture2', data2.result[0].soilmoisture2, { min: 2, max: 100 });
-            updateBox('soilmoisture3', data2.result[0].soilmoisture3, { min: 2, max: 100 });
-            updateBox('soilmoisture4', data2.result[0].soilmoisture4, { min: 2, max: 100 });
+            updateBox('soilmoisture1', data2.result[0].soilmoisture1, { min: 0.01, max: 100 });
+            updateBox('soilmoisture2', data2.result[0].soilmoisture2, { min: 0.01, max: 100 });
+            updateBox('soilmoisture3', data2.result[0].soilmoisture3, { min: 0.01, max: 100 });
+            updateBox('soilmoisture4', data2.result[0].soilmoisture4, { min: 0.01, max: 100 });
             updateLampUVBox('lampu_uv', data3.result[0].lampuuv, { min: 0, max: 1 });
             updatePompaAirBox('pompa_air', data3.result[0].pompaair, { min: 0, max: 1 });
             updatePompaNutrisiBox('pompa_nutrisi', data3.result[0].pompanutrisi, { min: 0, max: 1 });
@@ -141,67 +138,84 @@ function updatePompaNutrisiBox(elementId, value) {
     box.innerHTML = status;
 }
 
+// ARaH Mata angin
+var nilaiArahAngin = 45;
 
-  
+// Fungsi untuk mengubah nilai arah angin menjadi nama arah mata angin
+function angkaKeArahMataAngin(angka) {
+    if (angka >= 337.5 || angka < 22.5) {
+        return "Utara";
+    } else if (angka >= 22.5 && angka < 67.5) {
+        return "Timur Laut";
+    } else if (angka >= 67.5 && angka < 112.5) {
+        return "Timur";
+    } else if (angka >= 112.5 && angka < 157.5) {
+        return "Tenggara";
+    } else if (angka >= 157.5 && angka < 202.5) {
+        return "Selatan";
+    } else if (angka >= 202.5 && angka < 247.5) {
+        return "Barat Daya";
+    } else if (angka >= 247.5 && angka < 292.5) {
+        return "Barat";
+    } else if (angka >= 292.5 && angka < 337.5) {
+        return "Barat Laut";
+    } else {
+        return "Invalid";
+    }
+}
+
+// Mendapatkan nama arah mata angin dari nilai arah angin
+var namaArahMataAngin = angkaKeArahMataAngin(nilaiArahAngin);
+
+// Menetapkan teks ke elemen dengan ID 'windwave'
+document.getElementById('windwave').innerText = namaArahMataAngin;
   
 
 
 // // TABLEEEEEE REALTIME
 
 
-// function fetchData(url) {
-//     return fetch(url).then(response => response.json());
-//   }
-  
-//   function updateTableData() {
-//     const dataBody = document.getElementById('data-body');
-  
-//     // Fetch data from the API
-//     Promise.all([
-//       fetchData('https://vps.isi-net.org:3333/GetDataTopic1'),
-//       fetchData('https://vps.isi-net.org:3333/GetDataTopic2'),
-//     ])
-//       .then(responses => {
-//         // Clear the tbody before adding new data
-//         dataBody.innerHTML = '';
-  
-//         // Process each response
-//         responses.forEach(response => {
-//           if (response && response.result) {
-//             const data = response.result;
-  
-//             // Take the latest 10 items
-//             const slicedData = data.slice(0, 5);
-  
-//             // Add data to the table
-//             slicedData.forEach((item, index) => {
-//               console.log('Timestamp:', item.timestamp); // Tambahkan ini untuk debug
-  
-//               const row = document.createElement('tr');
-//               row.innerHTML = `
-//                 <td>${index + 1}</td>
-//                 <td>${item.timestamp !== undefined ? item.timestamp : 'N/A'}</td>
-//                 <td>${item.ph !== undefined ? item.ph : 'N/A'}</td>
-//                 <td>${item.tds !== undefined ? item.tds : 'N/A'}</td>
-//                 <td>${item.rain !== undefined ? item.rain : 'N/A'}</td>
-//                 <td>${item.suhu_air !== undefined ? item.suhu_air : 'N/A'}</td>
-//               `;
-  
-//               dataBody.appendChild(row);
-//             });
-//           } else {
-//             console.error('Invalid response format:', response);
-//           }
-//         });
-//       })
-//       .catch(error => console.error('Error:', error));
-//   }
-  
-//   // Update the table every 5 seconds (adjust the interval as needed)
-//   setInterval(updateTableData, 5000);
-  
-//   // Initial table update
-//   updateTableData();
+function fetchTableData() {
+    // Gunakan Promise.all untuk melakukan fetch request secara bersamaan
+    Promise.all([
+        fetch('https://vps.isi-net.org:3333/TableDataTopic1').then(response => response.json()),
+        fetch('https://vps.isi-net.org:3333/TableDataTopic2').then(response => response.json())
+    ])
+    .then(([dataTopic1, dataTopic2]) => {
+        // Proses data dari kedua fetch requests
+        const mergedData = [...dataTopic1.result, ...dataTopic2.result];
+        const dataBody = document.getElementById('data-body');
+        dataBody.innerHTML = ''; // Bersihkan tbody sebelum menambahkan data baru
+
+        mergedData.slice(0, 10).forEach((item, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${item.timestamp}</td>
+                <td>${item.ph}</td>
+                <td>${item.tds}</td>
+                <td>${item.suhu_air}</td>
+                <td>${item.winddirection}</td>
+                <td>${item.kecepatan_angin}</td>
+                <td>${item.infrared1}</td>
+                <td>${item.infrared2}</td>
+                <td>${item.infrared3}</td>
+                <td>${item.berat1}</td>
+
+
+            `;
+
+            dataBody.appendChild(row);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Panggil fetchTableData untuk pertama kali
+fetchTableData();
+// Panggil fetchTableData secara berkala setiap 30 detik
+setInterval(fetchTableData, 30000);
+
   
   
   
@@ -287,30 +301,30 @@ fetch('https://vps.isi-net.org:3333/GetDataTopic1')
 
 // //GRAFIK  RAIN ROUGE
 
-  fetch('https://vps.isi-net.org:3333/GetDataTopic1')
-  .then(response => response.json())
-  .then(data => {
-      const result = data.result;
-      const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
+//   fetch('https://vps.isi-net.org:3333/GetDataTopic1')
+//   .then(response => response.json())
+//   .then(data => {
+//       const result = data.result;
+//       const latestData = result.slice(Math.max(result.length - 60, 0)); // Ambil 60 data terbaru
 
-      const labels = latestData.map(item => item.timestamp).reverse();
-      const sensorrain = latestData.map(item => item.rain).reverse();
+//       const labels = latestData.map(item => item.timestamp).reverse();
+//       const sensorrain = latestData.map(item => item.rain).reverse();
 
-      const ctx = document.getElementById('ChartRainRouge').getContext('2d');
-      new Chart(ctx, {
-          type: 'line',
-          data: {
-              labels: labels,
-              datasets: [{
-                  label: ' SENSOR RAIN ROUGE',
-                  data: sensorrain,
-                  borderColor: '#00FF00',
-                  tension: 0.1
-              }]
-          }
-      });
-  })
-  .catch(error => console.error('Error:', error));
+//       const ctx = document.getElementById('ChartRainRouge').getContext('2d');
+//       new Chart(ctx, {
+//           type: 'line',
+//           data: {
+//               labels: labels,
+//               datasets: [{
+//                   label: ' SENSOR RAIN ROUGE',
+//                   data: sensorrain,
+//                   borderColor: '#00FF00',
+//                   tension: 0.1
+//               }]
+//           }
+//       });
+//   })
+//   .catch(error => console.error('Error:', error));
 
 // // Grafik Wind direction
 
