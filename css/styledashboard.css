@@ -1,67 +1,155 @@
-div .row {
+/* CSS untuk kolom dan well */
+.col-sm-9 {
+    width: 75%;
+    float: left;
+  }
+  
+  .well {
+    background-color: #1c5803; /* Warna latar belakang hijau sesuai contoh */
+    border: 1px solid #000000; /* Warna border sesuai contoh */
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* CSS untuk teks di tengah */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* CSS untuk gambar */
+  .text-center img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* CSS untuk judul dan paragraf */
+  .text-center h4 {
     color: #000000;
-    background-color: rgb(32, 25, 25);
+  }
+  
+  .text-center p {
+    color: #000000;
+  }
+  
+
+/* Global Styles */
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+/* Header Styling */
+.header {
+    color: #ffffff;
+    background-color: #008000; /* Warna hijau tua */
+    padding: 20px;
+    text-align: center;
 }
 
-/* Table */
+/* Navigation Styling */
+.navbar {
+    background-color: #008000; /* Warna hijau tua */
+    overflow: hidden;
+}
 
+.navbar a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #006400; /* Warna hijau tua yang lebih gelap saat hover */
+    color: #ffffff;
+}
+
+/* Table Styling */
 #table-container {
-    width: 900px; /* Lebar container */
-    height: 600px; /* Tinggi container */
-    overflow: auto; /* Aktifkan scroll jika tabel terlalu besar */
-  }
+    width: 100%;
+    overflow: auto;
+    margin-top: 20px;
+}
 
-  #realtime-table {
-    width: 100%; /* Lebar tabel 100% agar mengikuti container */
-  }
+#realtime-table {
+    width: 100%;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-    border-collapse: collapse;
 }
+
 #data-body {
-    background-color: #f2f2f2;
+    background-color: #ffffff; /* Warna hijau tua yang lebih gelap */
 }
 
 th, td {
-    border: 1px solid #000000;
+    border: 1px solid #ffffff; /* Warna hijau tua yang lebih gelap untuk border */
     text-align: left;
-    padding: 8px;
+    padding: 10px;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #ffffff; /* Warna hijau tua yang lebih gelap untuk baris genap */
 }
 
 th {
-    background-color: #000000;
-    color: rgb(255, 255, 255);
+    background-color: #008000; /* Warna hijau tua */
+    color: #000000;
 }
 
-div.text-center {
-    color: rgb(233, 233, 233);
-    background-color: rgb(0, 0, 0);
+/* Form Styling */
+.form-container {
+    margin-top: 20px;
 }
 
 select {
-    color: #000000;
+    color: #ff1010;
     font-size: medium;
-    padding: 5px;
-    border: 1px solid #ffffff;
-    background-color: #000000;
+    padding: 10px;
+    border: 1px solid #008000; /* Warna hijau tua */
+    background-color: #008000; /* Warna hijau tua */
 }
 
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {
-    height: 550px;
-}
-
-/* Set gray background color and 100% height */
+/* Sidebar Styling */
 .sidenav {
-    background-color: #000000;
-    height: 200%;
+    background-color: #008000; /* Warna hijau tua */
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+}
+
+.sidenav a:hover {
+    background-color: #006400; /* Warna hijau tua yang lebih gelap saat hover */
+    color: #ffffff;
+}
+
+/* Content Styling */
+.content {
+    padding: 16px;
+    height: calc(100vh - 40px);
+}
+
+/* Footer Styling */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #008000; /* Warna hijau tua */
+    color: #ffffff;
 }
 
 .chart-container {
@@ -76,28 +164,43 @@ select {
     flex: 1; /* Mengisi ruang yang tersedia dalam flex container */
     box-sizing: border-box;
     margin: 5px;
+    background-color: rgb(255, 255, 255); /* Warna putih */
 }
 
-/* On small screens, set height to 'auto' for the grid */
+
+/* Aturan media query untuk perangkat mobile */
 @media (max-width: 768px) {
+    .chart-container {
+        display: block; /* Menjadikan chart-container tump stap */
+    }
+
+    .chart {
+        height: auto; /* Tinggi chart otomatis */
+        margin: 5px 0; /* Margin atas dan bawah untuk chart */
+    }
+
+    #table-container {
+        width: 95%; /* Lebar container 95% untuk perangkat seluler */
+        max-width: 500px; /* Lebar maksimum container untuk perangkat seluler */
+    }
+
     .row.content {
         height: auto;
     }
+
     .sidenav {
         height: auto;
     }
-}
-/* Gaya untuk layar kecil (ponsel) */
-@media (max-width: 768px) {
+
     .container {
         padding: 10px;
     }
 
-    h1 {
-        font-size: 24px;
+    table {
+        width: 100%; /* Lebar tabel 100% untuk perangkat mobile */
     }
 
-    p {
-        font-size: 16px;
+    th, td {
+        padding: 5px; /* Padding yang lebih kecil untuk perangkat mobile */
     }
 }
