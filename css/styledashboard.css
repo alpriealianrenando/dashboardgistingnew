@@ -1,73 +1,56 @@
+/* form downlaod */
 
-/* CSS untuk kolom dan well */
+.col-sm-2 .well {
+    background-color: #16FF00; /* Ganti dengan warna hex atau nilai warna yang diinginkan */
+    padding: 15px;
+    border-radius: 4px;
+}
+
 .col-sm-9 {
     width: 75%;
     float: left;
-  }
-  
-  .well {
-    background-color: rgb(10, 117, 6); /* Warna latar belakang hijau sesuai contoh */
-    border: 1px solid #000000; /* Warna border sesuai contoh */
+}
+
+.well {
+    background-color: rgb(10, 117, 6);
+    border: 1px solid #000000;
     border-radius: 4px;
     padding: 15px;
     margin-bottom: 20px;
-  }
-  
-  /* CSS untuk teks di tengah */
-  .text-center {
-    text-align: center;
-  }
-  
-  /* CSS untuk gambar */
-  .text-center img {
+}
+
+/* CSS untuk gambar */
+.text-center img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-  }
-  
-  /* CSS untuk judul dan paragraf */
-  .text-center h4 {
-    color: #000000;
-  }
-  
-  .text-center p {
-    color: #000000;
-  }
-  
+}
 
-/* Global Styles */
+/* CSS untuk judul dan paragraf */
+.text-center h4,
+.text-center p {
+    color: #000000;
+}
+
 /* Global Styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
 }
+
 /* Header Styling */
 .header {
     color: #ffffff;
-    background-color: #008000; /* Warna hijau tua */
+    background-color: #008000;
     padding: 20px;
     text-align: center;
 }
 
 /* Navigation Styling */
 .navbar {
-    background-color: #008000; /* Warna hijau tua */
+    background-color: #008000;
     overflow: hidden;
-}
-
-.navbar a {
-    float: left;
-    display: block;
-    color: #ffffff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    background-color: #006400; /* Warna hijau tua yang lebih gelap saat hover */
-    color: #ffffff;
 }
 
 /* Table Styling */
@@ -77,33 +60,17 @@ body {
     margin-top: 20px;
 }
 
-#realtime-table {
-    width: 100%;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-#data-body {
-    background-color: #ffffff; /* Warna hijau tua yang lebih gelap */
-}
-
-th, td {
-    border: 1px solid #ffffff; /* Warna hijau tua yang lebih gelap untuk border */
+th,
+td {
+    border: 1px solid #ffffff;
     text-align: left;
     padding: 10px;
-}
-
-tr:nth-child(even) {
-    background-color: #ffffff; /* Warna hijau tua yang lebih gelap untuk baris genap */
-}
-
-th {
-    background-color: #008000; /* Warna hijau tua */
-    color: #000000;
 }
 
 /* Form Styling */
@@ -112,18 +79,18 @@ th {
 }
 
 select {
-    color: #ff1010;
+    color: #fffefe;
     font-size: medium;
     padding: 10px;
-    border: 1px solid #008000; /* Warna hijau tua */
-    background-color: #008000; /* Warna hijau tua */
+    border: 1px solid #008000;
+    background-color: #008000;
 }
 
 /* Sidebar Styling */
 .sidenav {
-    background-color: #008000; /* Warna hijau tua */
-    height: 100vh;
-    padding-top: 20px;
+    background-color: #008000;
+    padding-top: 50px;
+    padding-bottom: 100%;
 }
 
 .sidenav a {
@@ -132,11 +99,6 @@ select {
     font-size: 18px;
     color: #ffffff;
     display: block;
-}
-
-.sidenav a:hover {
-    background-color: #006400; /* Warna hijau tua yang lebih gelap saat hover */
-    color: #ffffff;
 }
 
 /* Content Styling */
@@ -149,7 +111,7 @@ select {
 .footer {
     padding: 20px;
     text-align: center;
-    background-color: #008000; /* Warna hijau tua */
+    background-color: #008000;
     color: #ffffff;
 }
 
@@ -161,28 +123,37 @@ select {
 }
 
 .chart {
-    height: 300px; /* Ubah tinggi sesuai kebutuhan */
-    flex: 1; /* Mengisi ruang yang tersedia dalam flex container */
+    height: 300px;
+    flex: 1;
     box-sizing: border-box;
     margin: 5px;
-    background-color: rgb(255, 255, 255); /* Warna putih */
+    background-color: rgb(255, 255, 255);
 }
 
+/* table button */
 
 /* Aturan media query untuk perangkat mobile */
 @media (max-width: 768px) {
     .chart-container {
-        display: block; /* Menjadikan chart-container tump stap */
+        display: block;
     }
 
     .chart {
-        height: auto; /* Tinggi chart otomatis */
-        margin: 5px 0; /* Margin atas dan bawah untuk chart */
+        height: auto;
+        margin: 5px 0;
     }
 
     #table-container {
-        width: 95%; /* Lebar container 95% untuk perangkat seluler */
-        max-width: 500px; /* Lebar maksimum container untuk perangkat seluler */
+        width: 95%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .col-sm-9,
+    .well {
+        width: 100%; /* Mengisi lebar penuh untuk perangkat mobile */
+        float: none; /* Menghilangkan float untuk perangkat mobile */
     }
 
     .row.content {
@@ -198,10 +169,11 @@ select {
     }
 
     table {
-        width: 100%; /* Lebar tabel 100% untuk perangkat mobile */
+        width: 100%;
     }
 
-    th, td {
-        padding: 5px; /* Padding yang lebih kecil untuk perangkat mobile */
+    th,
+    td {
+        padding: 5px;
     }
 }

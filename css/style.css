@@ -1,4 +1,6 @@
-
+#windwave {
+    background-color: aliceblue;
+}
 /* Navbar */
 .navbar-brand {
     font: 32px Viga;
@@ -27,7 +29,7 @@
 }
 
 .jumbotron .container {
-    color: rgb(35, 19, 252);
+    color: rgb(58, 58, 58);
     text-align: center;
     position: relative;
     z-index: 1;

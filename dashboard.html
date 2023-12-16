@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Smart Greenhouse Gisting Permai</title>
+  <title>AGRI-ICS</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -28,10 +28,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Dashboard</a></li>
-        <li><a href="index.html">Microclimate In Door</a></li>
-        <li><a href="index.html">Microclimate Out Door</a></li>
-        <li><a href="index.html">Intellegent Control Sistem</a></li>
+        <li class="active"><a href="landingpage.html">Dashboard</a></li>
+        <li><a href="dashboard.html">Microclimate In Door</a></li>
+        <li><a href="#">Microclimate Out Door</a></li>
       </ul>
     </div>
   </div>
@@ -46,7 +45,6 @@
         <li class="active"><a href="landingpage.html">Home</a></li>
         <li><a href="landingpage.html">Microclimate In Door</a></li>
         <li><a href="landingpage.html">Microclimate Out Door</a></li>
-        <li><a href="landingpage.html">Intellegent Control Sistem</a></li>
       </ul><br>
     </div>
     <br>
@@ -59,7 +57,7 @@
           <p>SYSTEM MONITORING SMART GREEN HOUSE</p>
         </div>
       </div>
-    
+     
       <div class="container">
         <h3>ACTUATOR</h3>
         <div class="row">
@@ -87,19 +85,19 @@
         <div class="row">
           <div class="col-sm-3">
             <div class="well">
-              <h4>TDS Sensor</h4>
+              <h4>TDS (mg/L)</h4>
               <p id="tdssensor"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Air Temperature</h4>
+              <h4>Water Temperature (°C)</h4>
               <p id="suhuair"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>pH Sensor</h4>
+              <h4>pH </h4>
               <p id="sensor_ph"></p>
             </div>
           </div>
@@ -107,7 +105,7 @@
       
         <h3>Microclimate</h3>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-2">
             <div class="well">
               <h4>Wind Direction</h4>
               <p id="windwave"></p>
@@ -115,19 +113,19 @@
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Wind Speed</h4>
+              <h4>Wind Speed ( m/s )</h4>
               <p id="windspeed"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Barometric Pressure</h4>
+              <h4>Barometric Pressure (hPa)</h4>
               <p id="tekanan_udara"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Room Temperature</h4>
+              <h4>Room Temperature (°C)</h4>
               <p id="suhu_ruangan"></p>
             </div>
           </div>
@@ -136,47 +134,62 @@
         <div class="row">
           <div class="col-sm-3">
             <div class="well">
-              <h4>Rain Gauge</h4>
-              <p id="rainrouge"></p>
+              <h4>Solar Intensity (mW/m2)</h4>
+              <p id="pyrano"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Gauge</h4>
-              <p id="#"></p>
+              <h4>Humidity (%RH)</h4>
+              <p id="humidity"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Solar Intensity</h4>
-              <p id="#"></p>
+              <h4>SPV (kPa)</h4>
+              <p id="sensor_svp"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>AVP (kPa)</h4>
+              <p id="sensor_avp"></p>
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>VPD (kPa)</h4>
+              <p id="sensor_vpd"></p>
+            </div>
+          </div>
+        </div>
+        
       
         <h3>Plant Needs</h3>
         <div class="row">
           <div class="col-sm-3">
             <div class="well">
-              <h4>Water Flow Table 1</h4>
+              <h4>Water Flow Table 1 (L/H)</h4>
               <p id="waterflow1"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Soil Moisture Table 1</h4>
+              <h4>Soil Moisture Table 1 (%)</h4>
               <p id="soilmoisture1"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Weight Table 1</h4>
+              <h4>Weight Table 1 (Gram)</h4>
               <p id="berat_sensor"></p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Infrared Sensor 1</h4>
+              <h4>Infrared Sensor Table 1 (°C)</h4>
               <p id="contactless1"></p>
             </div>
           </div>
@@ -184,13 +197,13 @@
       
         <div class="col-sm-3">
           <div class="well">
-            <h4>Water Flow Meja 2</h4>
+            <h4>Water Flow table 2 (LH)</h4>
             <p id="waterflow2"></p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well">
-            <h4>SoilMoisture Meja 2</h4>
+            <h4>SoilMoisture table 2 (%)</h4>
             <p id="soilmoisture2"></p>
           </div>
         </div>
@@ -198,14 +211,14 @@
         <div class="row">
           <div class="col-sm-3">
             <div class="well">
-              <h4>Berat meja 2</h4>
+              <h4>Berat table 2 (Gram)</h4>
               <p id="sensor_berat2"></p>
               <script src="js/dashboard.js"></script>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="well">
-              <h4>Infrared 2</h4>
+              <h4>Infrared table 2 (°C)</h4>
               <p id="infrared_2"></p>
             </div>
           </div>
@@ -213,19 +226,19 @@
       
         <div class="col-sm-3">
           <div class="well">
-            <h4>Water Flow Meja 3</h4>
+            <h4>Water Flow table 3 (L/H)</h4>
             <p id="waterflow3"></p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well">
-            <h4>SoilMoisture Meja 3</h4>
+            <h4>SoilMoisture table 3 (%)</h4>
             <p id="soilmoisture3"></p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well">
-            <h4>Berat Meja 3</h4>
+            <h4>Berat table 3 (Gram)</h4>
             <p id="sensor_berat3"></p>
           </div>
         </div>
@@ -233,7 +246,7 @@
         <div class="row">
           <div class="col-sm-3">
             <div class="well">
-              <h4>Infrared 3</h4>
+              <h4>Infrared table 3 (°C)</h4>
               <p id="infrared_3"></p>
             </div>
           </div>
@@ -241,108 +254,140 @@
       
         <div class="col-sm-3">
           <div class="well">
-            <h4>Water Flow Meja 4</h4>
+            <h4>Water Flow table 4 (L/H)</h4>
             <p id="waterflow4"></p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well">
-            <h4>SoilMoisture Meja 4</h4>
+            <h4>SoilMoisture table 4 (%)</h4>
             <p id="soilmoisture4"></p>
           </div>
         </div>
       
         <div class="col-sm-3">
           <div class="well">
-            <h4>Berat Meja 4</h4>
+            <h4>Weight table 4 (Gram)</h4>
             <p id="sensor_berat4"></p>
           </div>
         </div>
       </div>
     
     <script src="js/dashboard.js"></script>
-    
-   
     <!-- Lanjutkan dengan menambahkan elemen tabel lainnya sesuai kebutuhan Anda -->
     <div id="table-container">
-        <table id="realtime-table">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Waktu</th>
-              <th>Sensor PH</th>
-              <th>TDS sensor  </th>
-              <th>Suhu Temperature </th>
-              <th>Wind direction  </th>
-              <th>Wind Speed</th>
-              <th>Infrared 1</th>
-              <th>Infrared 2 </th>
-              <th>Infrared 3 </th>
-              <th>Berat 1 </th>
-
-
-            </tr>
-          </thead>
-          <tbody id="data-body">
-            <!-- Data akan ditambahkan ke sini secara dinamis -->
-          </tbody>
-        </table>
-      </div>
+      <table id="realtime-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Waktu</th>
+            <th>PH (pH)</th>
+            <th>TDS (mg/L) </th>
+            <th>Water Temperature (°C)</th>
+            <th>Wind Direction  (°)</th>
+            <th>Wind Speed  ( m/s )</th>
+            <th>leaf Infrared 1 (°C)</th>
+            <th>leaf Infrared 2 (°C)</th>
+            <th>leaf Infrared 3 (°C)</th>
+            <th>Weight Table  1 (Gram)</th>
+            <th>Weight Table  2 (Gram)</th>
+            <th>Weight Table  3 (Gram)</th>
+            <th>Weight Table  4 (Gram)</th>
+            <th>Waterflow Table 1  (L/H)</th>
+            <th>Waterflow Table 2 (L/H)</th>
+            <th>Waterflow Table 3 (L/H)</th>
+            <th>Waterflow Table 4 (L/H)</th>
+            <th>SoilMoisture 1 (%)</th>
+            <th>SoilMoisture 2 (%)</th>
+            <th>SoilMoisture 3 (%)</th>
+            <th>SoilMoisture 4 (%)</th>
+            <th>Room Temperature(°C)</th>
+            <th>Baromatic pressure (hPa)</th>
+            <th>Solar Intencity (mW/m2)</th>
+            <th>Humidity (%RH)</th>
+            <th>SVP (kPa)</th>
+            <th>AVP (kPa)</th>
+            <th>VPD (kPa)</th>
+          </tr>
+        </thead>
+        <tbody id="data-body">
+          <!-- Data akan ditambahkan ke sini secara dinamis -->
+        </tbody>
+      </table>
+    </div>
+    <!-- Formulir untuk memilih interval -->
+<form id="downloadForm">
+ <select id="interval" name="interval">
+     <option value="1">1 Hari</option>
+     <option value="7">7 Hari</option>
+     <option value="30">30 Hari</option>
+ </select>
+ <button type="button" onclick="downloadData()">Download Data</button>
+</form>
       
 </body>
 </html>
 
 <!-- Data Grafik Tabel -->
-<h2 class="Judul">GRAFIK</h2>
-    <div class="chart-container">
-        <!-- Suhu PH -->
-        <div class="chart">
-            <canvas id="myChart"></canvas>
-        </div>
-        <!-- TDS SENSOR  -->
-        <div class="chart">
-            <canvas id="ChartSuhuDasar"></canvas>
+<h2 class="Judul" id="judul_grafik">GRAFIK</h2>
 
-        </div>
-        <!-- DS18B20 -->
-        <div class="chart">
-            <canvas id="Chartsuhuair"></canvas>
-        </div>
-        <!-- Kadar Oksigen -->
-        <div class="chart">
-            <canvas id="ChartRainRouge"></canvas>
-        </div>
-        <!-- Salinitas -->
-        <div class="chart">
-            <canvas id="Chartwinddir"></canvas>
-        </div>
-        <!-- Suhu Ruang -->
-        <div class="chart">
-            <canvas id="Chartwindspeed"></canvas>
-        </div>
-        <!-- Salinitas -->
-        <div class="chart">
-            <canvas id="Chartwaterflow"></canvas>
-        </div>
-        <!-- Tinggi Air -->
-        <div class="chart">
-            <canvas id="ChartBerat"></canvas>
-        </div>
-        <!-- Soil -->
-        <div class="chart">
-            <canvas id="Chartsuhuruangan"></canvas>
-        </div>
-        <!-- contraccless -->
-        <div class="chart">
-          <canvas id="Chartinfrared"></canvas>
-      </div>
-      <!-- weightning -->
-      <div class="chart">
-        <canvas id="Chartsoil"></canvas>
-    </div>
-    <!-- ACS -->
+  <div class="chart-container">
+    <!-- Suhu PH -->
     <div class="chart">
-      <canvas id="Chartekanan"></canvas>
-  </div>
+        <canvas id="myChart"></canvas>
     </div>
-    <script src="js/dashboard.js"></script>
+    <!-- TDS SENSOR  -->
+    <div class="chart">
+        <canvas id="ChartSuhuDasar"></canvas>
+
+    </div>
+    <!-- DS18B20 -->
+    <div class="chart">
+        <canvas id="Chartsuhuair"></canvas>
+    </div>
+    <!-- Kadar Oksigen -->
+    <div class="chart">
+        <canvas id="ChartRainRouge"></canvas>
+    </div>
+    <!-- Salinitas -->
+    <div class="chart">
+        <canvas id="Chartwinddir"></canvas>
+    </div>
+    <!-- Suhu Ruang -->
+    <div class="chart">
+        <canvas id="Chartwindspeed"></canvas>
+    </div>
+    <!-- Salinitas -->
+    <div class="chart">
+        <canvas id="Chartwaterflow"></canvas>
+    </div>
+    <!-- Tinggi Air -->
+    <div class="chart">
+        <canvas id="ChartBerat"></canvas>
+    </div>
+    <!-- Soil -->
+    <div class="chart">
+        <canvas id="Chartsuhuruangan"></canvas>
+    </div>
+    <!-- contraccless -->
+    <div class="chart">
+      <canvas id="Chartinfrared"></canvas>
+  </div>
+  <!-- weightning -->
+  <div class="chart">
+    <canvas id="Chartsoil"></canvas>
+</div>
+<div class="chart">
+  <canvas id="Charthumidity"></canvas>
+</div>
+<!-- ACS -->
+<div class="chart">
+  <canvas id="Chartekanan"></canvas>
+</div>
+<div class="chart">
+  <canvas id="Chartsvp"></canvas>
+</div>
+</div>
+<script src="js/dashboard.js"></script>
+</div>
+   
