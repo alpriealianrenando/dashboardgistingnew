@@ -1,19 +1,146 @@
-<style>
 /* CSS untuk tata letak halaman About */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: Poppins, sans-serif;
+    background-color: #e6e3e3;
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: #105832;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
 
+.well-2 {
+    border-radius: 16px;
+    text-align: center;
+    background: #C3E2C2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+  
+
+.wrapper{
+    height: 100%;
+    width: 300px;
+    position: relative;
+  }
+  .wrapper .menu-btn{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    background: #88AB8E;
+    color: #fff;
+    height: 45px;
+    width: 45px;
+    z-index: 9999;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  #btn:checked ~ .menu-btn{
+    left: 247px;
+  }
+  .wrapper .menu-btn i{
+    position: absolute;
+    font-size: 23px;
+    transition: all 0.3s ease;
+  }
+  .wrapper .menu-btn i.fa-times{
+    opacity: 0;
+  }
+  #btn:checked ~ .menu-btn i.fa-times{
+    opacity: 1;
+    transform: rotate(-180deg);
+  }
+  #btn:checked ~ .menu-btn i.fa-bars{
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  #sidebar{
+    position: fixed;
+    background: #88AB8E;
+    height: 100%;
+    width: 270px;
+    overflow: hidden;
+    left: -270px;
+    transition: all 0.3s ease;
+  }
+  #btn:checked ~ #sidebar{
+    left: 0;
+  }
+  #sidebar .title{
+    line-height: 65px;
+    text-align: center;
+    background: #88AB8E;
+    font-size: 22px;
+    font-weight: 600;
+    color: #f2f2f2;
+    border-bottom: 1px solid #ffff;
+  }
+  #sidebar .list-items{
+    position: relative;
+    background: #88AB8E;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+  }
+  #sidebar .list-items li{
+    padding-left: 40px;
+    line-height: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #fff;
+    transition: all 0.3s ease;
+  }
+  #sidebar .list-items li:hover{
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0px 10px 3px #222;
+  }
+  #sidebar .list-items li:first-child{
+    border-top: none;
+  }
+  #sidebar .list-items li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  #sidebar .list-items li a i{
+    margin-right: 20px;
+  }
+  #sidebar .list-items .icons{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    position: absolute;
+    bottom: 100px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #sidebar .list-items .icons a{
+    height: 100%;
+    width: 40px;
+    display: block;
+    margin: 0 5px;
+    font-size: 18px;
+    color: #f2f2f2;
+    background: #4a4a4a;
+    border-radius: 5px;
+    border: 1px solid #383838;
+    transition: all 0.3s ease;
+  }
+  #sidebar .list-items .icons a:hover{
+    background: #404040;
+  }
+  .list-items .icons a:first-child{
+    margin-left: 0px;
+  }
+  
 h1 {
     margin: 0;
     padding: 0;
@@ -31,4 +158,7 @@ h1 {
 p {
     line-height: 1.6;
 }
-</style>
+a {
+    background-color: black;
+    color: #f0f0f0;
+}

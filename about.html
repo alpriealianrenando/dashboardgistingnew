@@ -1,68 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <style>
-        /* CSS untuk tata letak halaman About */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        
-        header {
-            background-color: #105832;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        
-        h1 {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 5px rgba(10, 89, 68, 0.2);
-        }
-        
-        /* CSS untuk gaya teks pada halaman About */
-        p {
-            line-height: 1.6;
-        }
-        a {
-            background-color: black;
-            color: #f0f0f0;
-        }
-        </style>
+    <link rel="stylesheet" href="css/about.css">
+    <title>Tentang Kami</title>
 </head>
 <body>
-    <header>
-        <h1>About Us</h1>
-    </header>
-    <div class="container">
-        <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-        <h2>Our Story</h2>
-        <p>Green house juga dikenal dengan istilah glass house atau dapat diterjemahkan sebagai rumah kaca. Green house memang kerap kali diidentikkan dengan isu pemanasan global (global warming), tapi bukan itu yang akan kita bahas kali ini. 
+    <div class="wrapper">
+        <input type="checkbox" id="btn" hidden>
+        <label for="btn" class="menu-btn">
+          <i class="fas fa-bars"></i>
+          <i class="fas fa-times"></i>
+        </label>
+        <nav id="sidebar">
+          <div class="title">Smart Greenhouse</div>
+          <ul class="list-items">
+            <li><a href="new.html"><img src="img/Home_fill.png"></i>Home</a></li>
+            <li><a href="about.html"><img src="img/Group_fill.png"></i>Tentang Kami</a></li>
+            <li><a href="login.html"><img src="img/User_fill.png">Log In</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+      <div class="content">
+        <div class="well-2">
+            <div class="text-center">
+              <img src="img/Logogreenhouse.png" alt="greenhouse" width="100" height="100">
+              <h4><strong>DASHBOARD</strong></h4>
+              <p>Smart Greenhouse Gisting Permai</p>
+            </div>
+          </div>
 
-            Sebagaimana dikutip dari Britannica, green house adalah suatu bangunan yang dirancang secara khusus untuk melindungi tanaman lunak (sprout) maupun tanaman yang tidak tahan terhadap cuaca dingin atau panas yang ekstrim. 
+    <div class="container">
+        <h2>Our Story</h2>
+        <p>Smart Greenhouse berbasis Intelligent Control System, pendekatan baru dalam pertanian dengan memanfaatkan teknologi canggih dan analisis data 
             
-            Dengan kata lain, green house adalah sebuah bangunan yang berfungsi untuk membudidayakan tanaman yang tidak sesuai dengan iklim lokal, seperti tanaman hias, beberapa jenis sayur dan buah-buahan yang sulit dibudidayakan di lahan luar, dan tunas tanaman yang baru saja tumbuh. </p>
+            untuk mengoptimalkan proses pertumbuhan, mengurangi limbah, dan meningkatkan produktivitas. Smart Greenhouse hadir sebagai inovasi pertanian 
+            
+            yang cerdas untuk meningkatkan produktivitas pertanian, mengurangi penggunaan pestisida, dan mengurangi risiko gagal panen akibat perubahan iklim.
+        </p>
 
         <h2>Support by</h2>
         <p>Seluruh Anggota PPK Ormawa Universitas Lampung</p>
-        <ul>
-            <li>M herly Pratama - Project Manager</li>
-            <li>Ardian Ulvan- Dosen Pembimbing</li>
-            <li>Anggota PPK Ormawa</li>
-        </ul>
     </div>
 </body>
 </html>

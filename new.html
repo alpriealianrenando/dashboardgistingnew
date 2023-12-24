@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Smart Greenhouse Gisting Permai</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/newstyle.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+  <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+</head> 
+<body>
+<div class="wrapper">
+  <input type="checkbox" id="btn" hidden>
+  <label for="btn" class="menu-btn">
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-times"></i>
+  </label>
+  <nav id="sidebar">
+    <div class="title">Smart Greenhouse</div>
+    <ul class="list-items">
+      <li><a href="new.html"><img src="img/Home_fill.png"></i>Home</a></li>
+      <li><a href="about.html"><img src="img/Group_fill.png"></i>Tentang Kami</a></li>
+      <li><a href="login.html"><img src="img/User_fill.png">Log In</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="content">
+  <div class="well-2">
+    <div class="text-center">
+      <img src="img/Logogreenhouse.png" alt="greenhouse" width="100" height="100">
+      <h4><strong>DASHBOARD</strong></h4>
+      <p>Smart Greenhouse Gisting Permai</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3><b>AKTUATOR</b></h3>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Sistem Pendingin</h4>
+          <p id="pompa_air"></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Lampu UV</h4>
+          <p id="lampu_uv"></p>
+        </div>
+      </div>
+    </div>
+  
+    <h3><b>TANKI NUTRISI</b></h3>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>TDS (mg/L)</h4>
+          <p id="tdsmeter"></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Temperatur Air (°C)</h4>
+          <p id="suhuair"></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>pH </h4>
+          <p id="sensor_ph"></p>
+        </div>
+      </div>
+    </div>
+  
+    <h3><b>MICROCLIMATE</b></h3>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Arah Angin</h4>
+          <p id="winddirect"></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Kecepatan Angin ( m/s )</h4>
+          <p id="anemo"></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Curah Hujan</h4>
+          <p id="raingauge"></p>
+        </div>
+      </div>
+  
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Suhu Ruangan (°C)</h4>
+          <p id="dht"></p>
+        </div>
+      </div>
+    </div>
+  
+    <h3><b>Kebutuhan Tanaman</b></h3>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Water Flow 1 (L/H)</h4>
+          <p id="waterflow_1"></p>
+          <script src="js/new.js"></script>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Water Flow 2 (L/H)</h4>
+          <p id="waterflow_2"></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Water Flow 3 (L/H)</h4>
+          <p id="waterflow_3"></p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Water Flow 4 (L/H)</h4>
+          <p id="waterflow_4"></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Water Flow 5 (L/H)</h4>
+        <p id="waterflow_5"></p>
+        <script src="js/new.js"></script>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Water Flow 6 (L/H)</h4>
+        <p id="waterflow_6"></p>
+        <script src="js/new.js"></script>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Water Flow 7 (L/H)</h4>
+          <p id="waterflow_7"></p>
+          <script src="js/new.js"></script>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Water Flow 8 (L/H)</h4>
+          <p id="waterflow_8"></p>
+          <script src="js/new.js"></script>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Water Flow 9 (L/H)</h4>
+        <p id="waterflow_9"></p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Water Flow 10 (L/H)</h4>
+        <p id="waterflow_10"></p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Water Flow 11 (L/H)</h4>
+        <p id="waterflow_11"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Water Flow 12 (L/H)</h4>
+          <p id="waterflow_12"></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Soil Moisture 1 (%)</h4>
+        <p id="soilmoisture_1"></p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Soil Moisture 2 (%)</h4>
+        <p id="soilmoisture_2"></p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Soil Moisture 3 (%)</h4>
+        <p id="soilmoisture_3"></p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Sensor Berat (gr)</h4>
+        <p id="weight"></p>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Infrared 1 (°C)</h4>
+        <p id="infrared_1"></p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+        <h4>Infrared 2 (°C)</h4>
+        <p id="infrared_2"></p>
+      </div>
+    </div>
+
+  </div>
+
+<script src="js/new.js"></script>
+<!-- Lanjutkan dengan menambahkan elemen tabel lainnya sesuai kebutuhan Anda -->
+<div id="table-container">
+  <table id="realtime-table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Waktu</th>
+        <th>PH (pH)</th>
+        <th>TDS (mg/L) </th>
+        <th>Temperatur Air(°C)</th>
+        <th>Wind Direction (°)</th>
+        <th>Kecepatan Angin (m/s)</th>
+        <th>Infrared 1 (°C)</th>
+        <th>Infrared 2 (°C)</th>
+        <th>Sensor Berat (gr)</th>
+        <th>Waterflow Table 1 (L/H)</th>
+        <th>Waterflow Table 2 (L/H)</th>
+        <th>Waterflow Table 3 (L/H)</th>
+        <th>Waterflow Table 4 (L/H)</th>
+        <th>Waterflow Table 5 (L/H)</th>
+        <th>Waterflow Table 6 (L/H)</th>
+        <th>Waterflow Table 7 (L/H)</th>
+        <th>Waterflow Table 8 (L/H)</th>
+        <th>Waterflow Table 9  (L/H)</th>
+        <th>Waterflow Table 10 (L/H)</th>
+        <th>Waterflow Table 11 (L/H)</th>
+        <th>Waterflow Table 12 (L/H)</th>
+        <th>SoilMoisture 1 (%)</th>
+        <th>SoilMoisture 2 (%)</th>
+        <th>SoilMoisture 3 (%)</th>
+        <th>Suhu Ruangan(°C)</th>
+        <th>Curah Hujan</th>
+      </tr>
+    </thead>
+    <tbody id="data-body">
+      <!-- Data akan ditambahkan ke sini secara dinamis -->
+    </tbody>
+  </table> 
+
+<!-- Formulir untuk memilih interval -->
+<form id="downloadForm">
+<select id="interval" name="interval">
+ <option value="1">1 Hari</option>
+ <option value="7">7 Hari</option>
+ <option value="30">30 Hari</option>
+</select>
+<button type="button" onclick="downloadData()">Download Data</button>
+</form>
+  
+</body>
+</html>
+
+<!-- Data Grafik Tabel -->
+<h2 class="Judul" id="judul_grafik"><b>GRAFIK</b></h2>
+
+<div class="chart-container">
+<!-- Suhu PH -->
+<div class="chart">
+    <canvas id="myChart"></canvas>
+</div>
+<!-- TDS SENSOR  -->
+<div class="chart">
+    <canvas id="ChartSuhuDasar"></canvas>
+</div>
+<!-- Suhu Air -->
+<div class="chart">
+    <canvas id="Chartsuhuair"></canvas>
+</div>
+<!-- Rain Gauge -->
+<div class="chart">
+    <canvas id="Chartraingauge"></canvas>
+</div>
+<!-- Arah Angin -->
+<div class="chart">
+    <canvas id="Chartwinddirect"></canvas>
+</div>
+<!-- Anemo -->
+<div class="chart">
+    <canvas id="Chartanemo"></canvas>
+</div>
+<!-- Infrared -->
+<div class="chart">
+    <canvas id="Chartinfrared"></canvas>
+</div>
+<!-- Weight --->
+<div class="chart">
+    <canvas id="Chartberat"></canvas>
+</div>
+<!-- Suhu Ruangan -->
+<div class="chart">
+    <canvas id="Chartsuhuruangan"></canvas>
+</div>
+<!-- Soil Moisture -->
+<div class="chart">
+<canvas id="Chartsoil"></canvas>
+</div>
+<!-- Waterflow -->
+<div class="chart">
+<canvas id="Chartwaterflow"></canvas>
+</div>
+<script src="js/new.js"></script>
+
+
+</div>

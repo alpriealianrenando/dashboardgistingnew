@@ -1,9 +1,9 @@
 /* form downlaod */
 
-.col-sm-2 .well {
-    background-color: #16FF00; /* Ganti dengan warna hex atau nilai warna yang diinginkan */
+.col-sm-3 .well {
+    background-color: #C1F2B0; /* Ganti dengan warna hex atau nilai warna yang diinginkan */
     padding: 15px;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .col-sm-9 {
@@ -12,7 +12,7 @@
 }
 
 .well {
-    background-color: rgb(10, 117, 6);
+    background-color: #C1F2B0;
     border: 1px solid #000000;
     border-radius: 4px;
     padding: 15px;
@@ -30,28 +30,56 @@
 .text-center h4,
 .text-center p {
     color: #000000;
+    font-family: Poppins, sans-serif;
 }
 
 /* Global Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     background-color: #f5f5f5;
 }
 
 /* Header Styling */
 .header {
     color: #ffffff;
-    background-color: #008000;
+    background-color: #65B741;
     padding: 20px;
     text-align: center;
 }
 
 /* Navigation Styling */
 .navbar {
-    background-color: #008000;
+    background-color: #65B741;
     overflow: hidden;
 }
+
+.collapse{
+    display: flex;
+}
+
+/* Sidebar Styling */
+.sidenav {
+    background-color: #65B741;
+    padding-top: 50px;
+    padding-bottom: 100%;
+}
+
+.nav-text{
+    color: #fffefe;
+}
+.sidenav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
+    display: flex;
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+}
+
 
 /* Table Styling */
 #table-container {
@@ -82,23 +110,8 @@ select {
     color: #fffefe;
     font-size: medium;
     padding: 10px;
-    border: 1px solid #008000;
-    background-color: #008000;
-}
-
-/* Sidebar Styling */
-.sidenav {
-    background-color: #008000;
-    padding-top: 50px;
-    padding-bottom: 100%;
-}
-
-.sidenav a {
-    padding: 16px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #ffffff;
-    display: block;
+    border: 1px solid #65B741;
+    background-color: #65B741;
 }
 
 /* Content Styling */
@@ -111,7 +124,7 @@ select {
 .footer {
     padding: 20px;
     text-align: center;
-    background-color: #008000;
+    background-color: #65B741;
     color: #ffffff;
 }
 
@@ -158,6 +171,8 @@ select {
 
     .row.content {
         height: auto;
+        justify-content: center;
+        align-items: center;
     }
 
     .sidenav {

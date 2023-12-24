@@ -1,115 +1,413 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
-
-    <title>Smart Greenhouse FP X FT</title>
-  <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-
-<!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <img src="img/Logogreenhouse.png" alt="greenhouse" width="100" height="100">
-        <span style="margin-left: 30px; font-size: 40px;">AGRI-ICS </span>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                      <a class="nav-link" href="dashboard.html">Microclimate Indoor</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="dashboard.html">Microclimate Outdoor</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-  
-    <!-- akhir Navbar -->
-
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">AGRI-ICS<span> FOR AGRICULTURE SMART GREEN HOUSE </span> <br>
-      </div>
+<head>
+  <title>Smart Greenhouse Gisting Permai</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/styledashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+  <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+</head> 
+<body>
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+           <div>
+            <img src="img/Logogreenhouse.png" alt="greenhouse" width="50" height="50">
+            <span class="nav-text"><b>Smart Greenhouse Gisting Permai</b></span>
+           </div>
+           
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="landingpage.html">Dashboard</a></li>
+        <li><a href="about.html">Tentang Kami</a></li> 
+        <li><a href="login.html">Log In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+    <img src="img/Logogreenhouse.png" alt="centered image" width="200" height="200">
 
-    <!-- container -->
-    <div class="container">
-
-      <!-- info panel -->
-      <div class="row justify-content-center">
-        <div class="col-10 info-panel">
-          <div class="row">
-            <div class="col-sm">
-              <img src="img/employee.png" alt="Employee" class="img-fluid float-left">
-              <h4>24 Hours</h4>
-              <p>pemantauan 24 jam</p>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="dashboard.html"><img src="img/Home_fill.png">Dashboard</a></li>
+        <li><a href="about.html"><img src="img/Group_fill.png">Tentang Kami</a></li> 
+        <li><a href="login.html"><img src="img/User_fill.png">Log In</a></li>
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-9">
+      <div class="well-2">
+        <div class="text-center">
+          <img src="img/Logogreenhouse.png" alt="greenhouse" width="200" height="200">
+          <h4><strong>DASHBOARD</strong></h4>
+          <p>Smart Greenhouse Gisting Permai</p>
+        </div>
+      </div>
+     
+      <div class="container">
+        <h3><b>AKTUATOR</b></h3>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Sistem Pendingin</h4>
+              <p id="pompa_air"></p>
             </div>
-            <div class="col-lg">
-              <img src="img/hires.png" alt="HiRes" class="img-fluid float-left">
-              <h4>gambar</h4>
-              <p>Apa saja yang Ditanam</p>
-            </div>
-            <div class="col-lg">
-              <img src="img/security.png" alt="Security" class="img-fluid float-left">
-              <h4>Security</h4>
-              <p>Keamanan Data Yang  terpantau 24 Jam.</p>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Lampu UV</h4>
+              <p id="lampu_uv"></p>
             </div>
           </div>
         </div>
-      </div>
-      <!-- akhir info panel -->
-
-
-      <!-- Workingspace -->
-      <div class="row workingspace">
-        <div class="col-lg-6">
-          <img src="img/Logogreenhouse.png" alt="" class="img-fluid">
+      
+        <h3><b>TANKI NUTRISI</b></h3>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>TDS (mg/L)</h4>
+              <p id="tdssensor"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Temperatur Air (°C)</h4>
+              <p id="suhuair"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>pH </h4>
+              <p id="sensor_ph"></p>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-5">
-          <h2>Tampilan Greeh House Unila</h2>
-          
-          <a href="#" class="btn btn-danger tombol">Ruang Dalam</a>
+      
+        <h3><b>MICROCLIMATE</b></h3>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Arah Angin</h4>
+              <p id="windwave"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Kecepatan Angin ( m/s )</h4>
+              <p id="windspeed"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Tekanan Udara (hPa)</h4>
+              <p id="tekanan_udara"></p>
+            </div>
+          </div>
+      
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Suhu Ruangan (°C)</h4>
+              <p id="suhu_ruangan"></p>
+            </div>
+          </div>
         </div>
-      </div>
-      <!-- akhir Workingspace -->
-
-
-      <!-- Testimonial -->
-      <section class="testimonial">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <p>"Kami Segenap Anggota Penelitian Riset MengucapKAN Teriima kasih"</p>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Solar Intensity (mW/m2)</h4>
+              <p id="pyrano"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Humidity (%RH)</h4>
+              <p id="humidity"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>SVP (kPa)</h4>
+              <p id="sensor_svp"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>AVP (kPa)</h4>
+              <p id="sensor_avp"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>VPD (kPa)</h4>
+              <p id="sensor_vpd"></p>
+            </div>
           </div>
         </div>
         
-      </section>
-      <!-- akhir Testimonial -->
-    </div>
-    <!-- akhir container -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-  </body>
+      
+        <h3><b>Kebutuhan Tanaman</b></h3>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Water Flow 1 (L/H)</h4>
+              <p id="waterflow1"></p>
+              <script src="js/dashboard.js"></script>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Water Flow 2 (L/H)</h4>
+              <p id="waterflow2"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Water Flow 3 (L/H)</h4>
+              <p id="waterflow3"></p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Water Flow 4 (L/H)</h4>
+              <p id="waterflow4"></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Water Flow 5 (L/H)</h4>
+            <p id="waterflow5"></p>
+            <script src="js/dashboard.js"></script>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Water Flow 6 (L/H)</h4>
+            <p id="waterflow2"></p>
+            <script src="js/dashboard.js"></script>
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Water Flow 7 (L/H)</h4>
+              <p id="waterflow3"></p>
+              <script src="js/dashboard.js"></script>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Water Flow 8 (L/H)</h4>
+              <p id="waterflow4"></p>
+              <script src="js/dashboard.js"></script>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Water Flow 9 (L/H)</h4>
+            <p id="waterflow1"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Water Flow 10 (L/H)</h4>
+            <p id="waterflow2"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Water Flow 11 (L/H)</h4>
+            <p id="waterflow3"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+              <h4>Water Flow 12 (L/H)</h4>
+              <p id="waterflow4"></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Soil Moisture 1 (%)</h4>
+            <p id="soilmoisture1"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Soil Moisture 2 (%)</h4>
+            <p id="soilmoisture2"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Soil Moisture 3 (%)</h4>
+            <p id="soilmoisture3"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Sensor Berat (gr)</h4>
+            <p id="berat_sensor"></p>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Infrared 1 (°C)</h4>
+            <p id="infrared_1"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Infrared 2 (°C)</h4>
+            <p id="infrared_2"></p>
+          </div>
+        </div>
+
+      </div>
+    
+    <script src="js/dashboard.js"></script>
+    <!-- Lanjutkan dengan menambahkan elemen tabel lainnya sesuai kebutuhan Anda -->
+    <div id="table-container">
+      <table id="realtime-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Waktu</th>
+            <th>PH (pH)</th>
+            <th>TDS (mg/L) </th>
+            <th>Temperatur Air(°C)</th>
+            <th>Wind Direction  (°)</th>
+            <th>Wind Speed  ( m/s )</th>
+            <th>Infrared 1 (°C)</th>
+            <th>Infrared 2 (°C)</th>
+            <th>Sensor Berat (gr)</th>
+            <th>Waterflow Table 1 (L/H)</th>
+            <th>Waterflow Table 2 (L/H)</th>
+            <th>Waterflow Table 3 (L/H)</th>
+            <th>Waterflow Table 4 (L/H)</th>
+            <th>Waterflow Table 5 (L/H)</th>
+            <th>Waterflow Table 6 (L/H)</th>
+            <th>Waterflow Table 7 (L/H)</th>
+            <th>Waterflow Table 8 (L/H)</th>
+            <th>Waterflow Table 9  (L/H)</th>
+            <th>Waterflow Table 10 (L/H)</th>
+            <th>Waterflow Table 11 (L/H)</th>
+            <th>Waterflow Table 12 (L/H)</th>
+            <th>SoilMoisture 1 (%)</th>
+            <th>SoilMoisture 2 (%)</th>
+            <th>SoilMoisture 3 (%)</th>
+            <th>Suhu Ruangan(°C)</th>
+            <th>Baromatic pressure (hPa)</th>
+            <th>Solar Intensity (mW/m2)</th>
+            <th>Humidity (%RH)</th>
+            <th>SVP (kPa)</th>
+            <th>AVP (kPa)</th>
+            <th>VPD (kPa)</th>
+          </tr>
+        </thead>
+        <tbody id="data-body">
+          <!-- Data akan ditambahkan ke sini secara dinamis -->
+        </tbody>
+      </table> 
+  
+    <!-- Formulir untuk memilih interval -->
+<form id="downloadForm">
+ <select id="interval" name="interval">
+     <option value="1">1 Hari</option>
+     <option value="7">7 Hari</option>
+     <option value="30">30 Hari</option>
+ </select>
+ <button type="button" onclick="downloadData()">Download Data</button>
+</form>
+      
+</body>
 </html>
+
+<!-- Data Grafik Tabel -->
+<h2 class="Judul" id="judul_grafik">GRAFIK</h2>
+
+  <div class="chart-container">
+    <!-- Suhu PH -->
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+    </div>
+    <!-- TDS SENSOR  -->
+    <div class="chart">
+        <canvas id="ChartSuhuDasar"></canvas>
+
+    </div>
+    <!-- DS18B20 -->
+    <div class="chart">
+        <canvas id="Chartsuhuair"></canvas>
+    </div>
+    <!-- Kadar Oksigen -->
+    <div class="chart">
+        <canvas id="ChartRainRouge"></canvas>
+    </div>
+    <!-- Salinitas -->
+    <div class="chart">
+        <canvas id="Chartwinddir"></canvas>
+    </div>
+    <!-- Suhu Ruang -->
+    <div class="chart">
+        <canvas id="Chartwindspeed"></canvas>
+    </div>
+    <!-- Salinitas -->
+    <div class="chart">
+        <canvas id="Chartwaterflow"></canvas>
+    </div>
+    <!-- Tinggi Air -->
+    <div class="chart">
+        <canvas id="ChartBerat"></canvas>
+    </div>
+    <!-- Soil -->
+    <div class="chart">
+        <canvas id="Chartsuhuruangan"></canvas>
+    </div>
+    <!-- contraccless -->
+    <div class="chart">
+      <canvas id="Chartinfrared"></canvas>
+  </div>
+  <!-- weightning -->
+  <div class="chart">
+    <canvas id="Chartsoil"></canvas>
+</div>
+<div class="chart">
+  <canvas id="Charthumidity"></canvas>
+</div>
+<!-- ACS -->
+<div class="chart">
+  <canvas id="Chartekanan"></canvas>
+</div>
+<div class="chart">
+  <canvas id="Chartsvp"></canvas>
+</div>
+</div>
+<script src="js/dashboard.js"></script>
+</div>
+   

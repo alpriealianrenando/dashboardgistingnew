@@ -15,7 +15,6 @@ function fetchData() {
         console.log(result);
         document.getElementById('sensor_ph').innerText = `pH ${result.ph}`;
         document.getElementById('pompa_air').innerText = result.pompaair;
-        document.getElementById('pompa_nutrisi').innerText = result.pompanutrisi;
         document.getElementById('lampu_uv').innerText = result.lampuuv;
         document.getElementById('tdssensor').innerText = result.tds;
         document.getElementById('suhuair').innerText = result.suhu_air;
@@ -28,14 +27,12 @@ function fetchData() {
         document.getElementById('waterflow1').innerText = result.waterflow1;
         document.getElementById('soilmoisture1').innerText = result.soilmoisture1;
         document.getElementById('berat_sensor').innerText = result.berat1;
-        document.getElementById('contactless1').innerText = result.infrared1;
+        document.getElementById('infrared_1').innerText = result.infrared1;
         document.getElementById('waterflow2').innerText = result.waterflow2;
         document.getElementById('soilmoisture2').innerText = result.soilmoisture2;
-        document.getElementById('sensor_berat2').innerText = result.berat2;
         document.getElementById('infrared_2').innerText = result.infrared2;
         document.getElementById('waterflow3').innerText = result.waterflow3;
         document.getElementById('soilmoisture3').innerText = result.soilmoisture3;
-        document.getElementById('sensor_berat3').innerText = result.berat3;
         document.getElementById('infrared_3').innerText = result.infrared3;
         document.getElementById('waterflow4').innerText = result.waterflow4;
         document.getElementById('soilmoisture4').innerText = result.soilmoisture4;
@@ -43,6 +40,7 @@ function fetchData() {
         document.getElementById('sensor_svp').innerText = result.svp;
         document.getElementById('sensor_avp').innerText = result.avp;
         document.getElementById('sensor_vpd').innerText = result.vpd;
+
       } else {
         console.error('Error: Invalid data structure received from the server.');
       }
@@ -67,12 +65,8 @@ var waterflow4Box = document.getElementById('waterflow4');
 var soilmoisture1Box = document.getElementById('soilmoisture1');
 var soilmoisture2Box = document.getElementById('soilmoisture2');
 var soilmoisture3Box = document.getElementById('soilmoisture3');
-var soilmoisture4Box = document.getElementById('soilmoisture4');
 var berat1Box = document.getElementById('berat_sensor');
-var berat2Box = document.getElementById('sensor_berat2');
-var berat3Box = document.getElementById('sensor_berat3');
-var berat4Box = document.getElementById('sensor_berat4');
-var infrared1Box = document.getElementById('contactless1');
+var infrared1Box = document.getElementById('infrared_1');
 var infrared2Box = document.getElementById('infrared_2');
 var infrared3Box = document.getElementById('infrared_3');
 var svpBox = document.getElementById('sensor_svp');
@@ -101,7 +95,6 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         var lastsoilmoisture1Value = data.result[0].soilmoisture1;
         var lastsoilmoisture2Value = data.result[0].soilmoisture2;
         var lastsoilmoisture3Value = data.result[0].soilmoisture3;
-        var lastsoilmoisture4Value = data.result[0].soilmoisture4;
         var lastberat1Value = data.result[0].berat1;
         var lastberat2Value = data.result[0].berat2;
         var lastberat3Value = data.result[0].berat3;
@@ -127,7 +120,6 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         updatesoilmoisture1Box(lastsoilmoisture1Value, soilmoisture1Box);
         updatesoilmoisture2Box(lastsoilmoisture2Value, soilmoisture2Box);
         updatesoilmoisture3Box(lastsoilmoisture3Value, soilmoisture3Box);
-        updatesoilmoisture4Box(lastsoilmoisture4Value, soilmoisture4Box);
         updateberat1Box(lastberat1Value, berat1Box);
         updateberat2Box(lastberat2Value, berat2Box);
         updateberat3Box(lastberat3Value, berat3Box);
@@ -146,7 +138,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = phValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = phValue.toFixed(2);
       }
     }
@@ -156,7 +148,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = tdsValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = tdsValue.toFixed(2);
       }
     }
@@ -165,7 +157,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = suhuValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = suhuValue.toFixed(2);
       }
     }
@@ -174,7 +166,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = kecepatanValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = kecepatanValue.toFixed(2);
       }
     }
@@ -183,7 +175,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = tekananValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = tekananValue.toFixed(2);
       }
     }
@@ -192,7 +184,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = ruangValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = ruangValue.toFixed(2);
       }
     }
@@ -201,7 +193,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = pyranoValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = pyranoValue.toFixed(2);
       }
     }
@@ -210,7 +202,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = humidityValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = humidityValue.toFixed(2);
       }
     }
@@ -219,7 +211,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = waterflow1Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = waterflow1Value.toFixed(2);
       }
     }
@@ -228,7 +220,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = waterflow2Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = waterflow2Value.toFixed(2);
       }
     }
@@ -237,7 +229,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = waterflow3Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = waterflow3Value.toFixed(2);
       }
     }
@@ -246,16 +238,17 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = waterflow4BoxValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = waterflow4Value.toFixed(2);
       }
     }
+
     function updatesoilmoisture1Box(soilmoisture1Value, box) {
       if (soilmoisture1Value < 0 || soilmoisture1Value > 100) {
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = soilmoisture1BoxValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = soilmoisture1Value.toFixed(2);
       }
     }
@@ -264,7 +257,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = soilmoisture2BoxValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = soilmoisture2Value.toFixed(2);
       }
     }
@@ -273,7 +266,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = soilmoisture3BoxValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = soilmoisture3Value.toFixed(2);
       }
     }
@@ -282,7 +275,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = soilmoisture4BoxValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = soilmoisture4Value.toFixed(2);
       }
     }
@@ -291,7 +284,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = berat1Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = berat1Value.toFixed(2);
       }
     }
@@ -300,7 +293,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = berat2Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = berat2Value.toFixed(2);
       }
     }
@@ -309,7 +302,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = berat3Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = berat3Value.toFixed(2);
       }
     }
@@ -318,7 +311,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = berat4Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = berat4Value.toFixed(2);
       }
     }
@@ -327,7 +320,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = infrared1Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = infrared1Value.toFixed(2);
       }
     }
@@ -336,7 +329,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = infrared2Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = infrared2Value.toFixed(2);
       }
     }
@@ -345,7 +338,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = infrared3Value.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = infrared3Value.toFixed(2);
       }
     }
@@ -355,7 +348,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = svpValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = svpValue.toFixed(2);
       }
     }
@@ -364,7 +357,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = avpValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = avpValue.toFixed(2);
       }
     }
@@ -373,7 +366,7 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
         box.parentElement.style.backgroundColor = '#FF0303';
         box.innerHTML = vpdValue.toFixed(2);
       } else {
-        box.parentElement.style.backgroundColor = '#16FF00';
+        box.parentElement.style.backgroundColor = '#C1F2B0';
         box.innerHTML = vpdValue.toFixed(2);
       }
     }
@@ -381,26 +374,19 @@ fetch(`https://vps.isi-net.org:3333/get100data`)
   function updatePompaBox(elementId, value) {
     var box = document.getElementById(elementId);
     var status = (value === 1) ? 'Aktif' : 'Tidak Aktif';
-    var backgroundColor = (value === 1) ? '#007acc' : '#ffffff';
-    box.parentElement.style.backgroundColor = backgroundColor;
-    box.innerHTML = status;
-  }
-  function updatenutrisiBox(elementId, value) {
-    var box = document.getElementById(elementId);
-    var status = (value === 1) ? 'Aktif' : 'Tidak Aktif';
-    var backgroundColor = (value === 1) ? '#007acc' : '#ffffff';
+    var backgroundColor = (value === 1) ? '#61A3BA' : '#ffffff';
     box.parentElement.style.backgroundColor = backgroundColor;
     box.innerHTML = status;
   }
   function updatelampuuvBox(elementId, value) {
     var box = document.getElementById(elementId);
     var status = (value === 1) ? 'Aktif' : 'Tidak Aktif';
-    var backgroundColor = (value === 1) ? '#007acc' : '#ffffff';
+    var backgroundColor = (value === 1) ? '#61A3BA' : '#ffffff';
     box.parentElement.style.backgroundColor = backgroundColor;
     box.innerHTML = status;
   }
 
-    fetch('https://vps.isi-net.org:3333/get100data')
+    fetch('https://vps.isi-net.org:5000/GetDataGistingNew')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -426,10 +412,8 @@ function fetchDataAndProcess() {
     })
     .then(data => {
       var lastPompaValue = data.result[0].pompaair;
-      var lastnutrisiValue = data.result[0].pompanutrisi;
       var lastlampuuvValue = data.result[0].lampuuv;
       updatePompaBox('pompa_air', lastPompaValue);
-      updatenutrisiBox('pompa_nutrisi', lastnutrisiValue);
       updatelampuuvBox('lampu_uv', lastlampuuvValue);
     })
     .catch(error => console.error('Error:', error));
@@ -527,7 +511,6 @@ setInterval(updateWindDirection, 60000);
                       <td>${item.kecepatan_angin}</td>
                       <td>${item.infrared1}</td>
                       <td>${item.infrared2}</td>
-                      <td>${item.infrared3}</td>
                       <td>${item.berat1}</td>
                       <td>${item.berat2}</td>
                       <td>${item.berat3}</td>
@@ -536,10 +519,17 @@ setInterval(updateWindDirection, 60000);
                       <td>${item.waterflow2}</td>
                       <td>${item.waterflow3}</td>
                       <td>${item.waterflow4}</td>
+                      <td>${item.waterflow1}</td>
+                      <td>${item.waterflow2}</td>
+                      <td>${item.waterflow3}</td>
+                      <td>${item.waterflow4}</td>
+                      <td>${item.waterflow1}</td>
+                      <td>${item.waterflow2}</td>
+                      <td>${item.waterflow3}</td>
+                      <td>${item.waterflow4}</td>
                       <td>${item.soilmoisture1}</td>
                       <td>${item.soilmoisture2}</td>
                       <td>${item.soilmoisture3}</td>
-                      <td>${item.soilmoisture4}</td>
                       <td>${item.suhu}</td>
                       <td>${item.tekanan_udara}</td>
                       <td>${item.pyrano}</td>
@@ -641,7 +631,7 @@ fetch('https://vps.isi-net.org:3333/get100data')
 
 // // //GRAFIK PYRANO
 
-  fetch('https://vps.isi-net.org:3333/Get100data')
+  fetch('https://vps.isi-net.org:3333/get100data')
   .then(response => response.json())
   .then(data => {
       const result = data.result;
@@ -668,7 +658,7 @@ fetch('https://vps.isi-net.org:3333/get100data')
 
 // // // Grafik Wind direction
 
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
 .then(response => response.json())
 .then(data => {
     const result = data.result;
@@ -694,7 +684,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
 .catch(error => console.error('Error:', error));
 
 // // GRAFIK WIND SPEED
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
 .then(response => response.json())
 .then(data => {
     const result = data.result;
@@ -720,7 +710,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
 .catch(error => console.error('Error:', error));
 
 // GRAFIK BERAT
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
   .then(response => response.json())
   .then(data => {
     const result1 = data.result;
@@ -769,7 +759,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
   })
   .catch(error => console.error('Error:', error));
 //GRAFIK WaterFlow
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
 .then(response => response.json())
 .then(data => {
     const result = data.result;
@@ -818,7 +808,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
   .catch(error => console.error('Error:', error));
 
 // // Grafik Suhu Ruangan
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
 .then(response => response.json())
 .then(data => {
     const result = data.result;
@@ -843,7 +833,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
 })
 .catch(error => console.error('Error:', error));
 // // GRAFIK INFRARED
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
 .then(response => response.json())
 .then(data => {
     const result = data.result;
@@ -892,7 +882,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
   .catch(error => console.error('Error:', error));
 // 
   // Grafik Soil
-  fetch('https://vps.isi-net.org:3333/Get100data')
+  fetch('https://vps.isi-net.org:3333/get100data')
 .then(response => response.json())
 .then(data => {
     const result = data.result;
@@ -935,7 +925,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
 
 // // TEKANAN UDARA
 // // GRAFIK KETINGGIAN
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
 .then(response => response.json())
 .then(data => {
     const result = data.result;
@@ -960,7 +950,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
 })
 .catch(error => console.error('Error:', error));
 // Grafik Humidity
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
 .then(response => response.json())
 .then(data => {
     const result = data.result;
@@ -985,7 +975,7 @@ fetch('https://vps.isi-net.org:3333/Get100data')
 })
 .catch(error => console.error('Error:', error));
 
-fetch('https://vps.isi-net.org:3333/Get100data')
+fetch('https://vps.isi-net.org:3333/get100data')
   .then(response => response.json())
   .then(data => {
     const result1 = data.result;
@@ -1005,19 +995,19 @@ fetch('https://vps.isi-net.org:3333/Get100data')
         datasets: [
           {
             label: 'SVP (kPa)',
-            data: sensorsvp,
+            data: sensor_svp,
             borderColor: '#C21010',
             tension: 0.1
           },
           {
             label: 'AVP (kPa))',
-            data: sensoravp,
+            data: sensor_avp,
             borderColor: '#00CED1',
             tension: 0.1
           },
           {
             label: 'VPD(kPa)',
-            data: sensorvpd,
+            data: sensor_vpd,
             borderColor: '#800080',
             tension: 0.1
           }
